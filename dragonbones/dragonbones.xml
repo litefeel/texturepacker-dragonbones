@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>{% load negative %}
+<TextureAtlas format="{{settings.outputFormat}}" imagePath="{{texture.fullName}}">
+{% for sprite in allSprites %}<SubTexture name="{{sprite.trimmedName}}" x="{{sprite.frameRect.x}}" y="{{sprite.frameRect.y}}"{% if sprite.rotated %} rotated="true"{% endif %} width="{{sprite.frameRect.width}}" height="{{sprite.frameRect.height}}"{% if sprite.trimmed %} frameX="{{sprite.sourceRect.x|negative}}" frameY="{{sprite.sourceRect.y|negative}}" frameWidth="{{sprite.untrimmedSize.width}}" frameHeight="{{sprite.untrimmedSize.height}}"{% endif %}/>
+{% endfor %}
+</TextureAtlas>
